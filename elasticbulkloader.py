@@ -17,7 +17,7 @@ def parsecc100(path):
             doc = doc + line
 
 
-def chunkparsecc100(path, chunksize):
+def chunkparsecc100(path, chunksize, index="jpnsearch"):
     dataset = parsecc100(path)
     chunk = ""  # for limiting the size of the payload
     actions = []  # return object
@@ -28,7 +28,7 @@ def chunkparsecc100(path, chunksize):
         for sentence in doc.split("\n"):
             rownum = rownum + 1
             source = {"document_id": id, "sentence_id": rownum, "sentence": sentence}
-            action = {"_index": "jpnsearch", "_source": source}
+            action = {"_index": index, "_source": source}
             actions.append(action)
         chunk += doc
         if chunk.__sizeof__() >= chunksize:
