@@ -37,6 +37,7 @@ def chunkparsecc100(path, chunksize, index="jpnsearch"):
             chunk = ""
     yield actions
 
+
 client = Elasticsearch(f"http://{os.environ.get('ELASTIC_PASS')}@localhost:9250")
 
 MiB = 64
