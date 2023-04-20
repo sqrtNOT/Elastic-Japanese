@@ -24,8 +24,10 @@ def chunkparsecc100(path, chunksize):
     id = 0
     for doc in dataset:
         id = id + 1
+        rownum = 0
         for sentence in doc.split("\n"):
-            source = {"document_id": id, "sentence": sentence}
+            rownum = rownum + 1
+            source = {"document_id": id, "sentence_id": rownum, "sentence": sentence}
             action = {"_index": "jpnsearch", "_source": source}
             actions.append(action)
         chunk += doc

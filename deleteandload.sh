@@ -29,6 +29,9 @@ curl -XPUT -u $ELASTIC_PASS 'localhost:9250/jpnsearch' -H 'Content-Type: applica
 			"document_id": {
 				"type": "integer"
 			},
+			"sentence_id":{
+				"type": "integer"
+			},
 			"sentence": {
 				"type": "text",
 				"analyzer": "kuromoji_normalize"
