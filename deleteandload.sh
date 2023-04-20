@@ -1,6 +1,6 @@
 #!/bin/bash -x
-curl -XDELETE -u elastic:$ELASTIC_PASS 'localhost:9250/jpnsearch'
-curl -XPUT -u elastic:$ELASTIC_PASS 'localhost:9250/jpnsearch' -H 'Content-Type: application/json' -d '
+curl -XDELETE -u $ELASTIC_PASS 'localhost:9250/jpnsearch'
+curl -XPUT -u $ELASTIC_PASS 'localhost:9250/jpnsearch' -H 'Content-Type: application/json' -d '
 {
 	"settings": {
 		"index": {
