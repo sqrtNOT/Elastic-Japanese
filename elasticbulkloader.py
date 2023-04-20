@@ -35,7 +35,7 @@ def chunkparsecc100(path, chunksize):
             yield actions
             actions = []
             chunk = ""
-
+    yield actions
 
 client = Elasticsearch(f"http://{os.environ.get('ELASTIC_PASS')}@localhost:9250")
 
